@@ -6,7 +6,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <meta name="keywords" content="Tapsi - Portfolio Template">
      <meta name="description" content="Tapsi - Portfolio Template">
-     <title>Tapsi - React NextJS Portfolio Template </title>
+     <title>Justin RUTAGENGWA Template </title>
      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
      <meta name="next-head-count" content="8">
           <meta charset="UTF-8">
@@ -72,6 +72,10 @@
                                         </li>
                                         
                               </ul>
+                              <div class="mode3">
+                              <img class="mode"  id="icon" src="sun.png" alt="">
+                              <h3 class="mode-1">Mode</h3>
+                         </div>
                     </div>
           </div>
           <main class="">
@@ -252,27 +256,28 @@
                <div class="skill-lt" data-value="92">
                          <h6 class="dark-color">HTML5</h6>
                <div class="skill-bar">
-                         <div class="skill-bar-in"><span>92%</span>
+                         <div class="skill-bar-in-92"><span>92%</span>
                          </div>
                </div>
      </div>
                <div class="skill-lt" data-value="72">
                          <h6 class="dark-color">WordPress</h6>
                          <div class="skill-bar">
-                                   <div class="skill-bar-in"><span>75%</span>
+                                   <div class="skill-bar-in-75"><span>75%</span>
                                    </div>
                               </div>
                          </div>
                          <div class="skill-lt" data-value="86">
                                    <h6 class="dark-color">Magento</h6>
                                    <div class="skill-bar">
-                                   <div class="skill-bar-in"><span>86%</span>
+                                   <div class="skill-bar-in-86"><span>86%</span>
                                    </div>
                               </div>
                          </div>
                                    <div class="skill-lt" data-value="88">
                                              <h6 class="dark-color">UI/UX</h6>
-                                             <div class="skill-bar"><div class="skill-bar-in"><span>88%</span></div>
+                                             <div class="skill-bar">
+                                                  <div class="skill-bar-in-88"><span>88%</span></div>
                                    </div>
                          </div>
                </div>
@@ -520,7 +525,7 @@
                          <h4>Got Ideas? We<!-- -->'<!-- -->ve got the skills. Let<!-- -->'<!-- -->s team up.</h4>
                          <p>Tell us more about yourself and what you<!-- -->'<!-- -->re got in mind.</p>
                     </div>
-                    <form id="contact-form">
+               <form id="contact-form" >
                          <div class="returnmessage" data-success="Your message has been received, we will contact you soon." style="display:none">
                               <span class="contact_success">Your message has been received, we will contact you soon.</span>
                          </div>
@@ -530,26 +535,62 @@
                               <div class="col-md-6">
                                    <div class="form-group">
                                    <label class="form-label">First name</label>
-                                   <input name="name" id="name" type="text" placeholder="Name *" class="form-control " value="">
+                                   <input name="name" id="name" type="text" placeholder="Name *" class="form-control ">
                               </div>
                          </div>
                          <div class="col-md-6">
                               <div class="form-group">
                                    <label class="form-label">Your Email</label>
-                                   <input name="email" id="email" type="text" placeholder="E-mail *" class="form-control " value="">
-                              </div></div><div class="col-12"><div class="form-group"><label class="form-label">Subject</label>
-                                   <input name="subject" id="subject" type="text" placeholder="Subject *" class="form-control " value="">
-                              </div></div><div class="col-md-12"><div class="form-group"><label class="form-label">Your message</label>
-                                   <textarea name="msg" id="message" placeholder="Message" class="form-control "></textarea>
+                                   <input name="email" id="email" type="text" placeholder="E-mail *" class="form-control " >
+                              </div>
+                         </div>
+                         <div class="col-12">
+                              <div class="form-group">
+                                   <label class="form-label">Subject</label>
+                                   <input name="subject" id="subject" type="text" placeholder="Subject *" class="form-control ">
                               </div>
                          </div>
                          <div class="col-md-12">
-                              <div class="send"><button class="px-btn w-100" type="submit" id="send_message" value=""> Send Message </button>
+                              <div class="form-group">
+                                   <label class="form-label">Your message</label>
+                                   <textarea name="message" id="message" placeholder="Message" class="form-control "></textarea>
+                              </div>
+                         </div>
+                         <div class="col-md-12">
+                              <div class="send"><button class="px-btn w-100" type="submit" id="button" value="Send Email"> Send Message </button>
                               </div>
                          </div>
                     </div>
                </form>
+               <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+     emailjs.init('E132481c-3XCs-M2j');
+
+     const btn = document.getElementById('button');
+
+document.getElementById('contact-form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_uaxx2xf';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+   </script>
           </div>
+         
+
      </div>
 </div>
 </div>
@@ -558,5 +599,20 @@
           </main>
 </main>
 </div>
+
+
+<script>
+     var icon = document.getElementById("icon");
+     icon.onclick = function(){
+          document.body.classList.toggle("white-mode");
+          if(document.body.classList.contains("white-mode")){
+               icon.src = "moon.png";
+          }else{
+               icon.src = "sun.png";
+          }
+     }
+</script>
+
+
 </body>
 </html>
