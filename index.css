@@ -732,6 +732,13 @@ div .row .align-items-start {
     position: relative;
     margin: 20px;
 }
+.feature-box-01:hover {
+   
+    border: 2px solid #09d893;
+    transform: rotate(5deg);
+    transition: all .35s ease;
+   
+}
 .feature-box-01 .icon {
     width: 70px;
     height: 70px;
@@ -776,6 +783,14 @@ div .row .align-items-start {
     bottom: 5px;
     background-color: var(--px-gray-4);
     z-index: -1;
+    border-radius: 10px;
+    transform: rotate(10deg);
+    transition: all .35s ease;
+}
+.feature-box-01 .icon:hover {
+   
+    background-color: var(--px-gray-4);
+   
     border-radius: 10px;
     transform: rotate(10deg);
     transition: all .35s ease;
@@ -848,13 +863,18 @@ div .row .align-items-start {
     bottom: 0;
     left: 20px;
     right: 20px;
-    background-color: #2d2f31;
+    background-color: var(--form-contlo);
     border: 2px solid #444746;
     padding: 20px;
     border-radius: 10px;
     transition: all .35s ease;
     opacity: 0;
 }
+.portfolio-box .portfolio-text:hover{
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
 .portfolio-box .portfolio-img {
     overflow: hidden;
     border-radius: 10px;
@@ -865,11 +885,23 @@ div .row .align-items-start {
     overflow: clip;
 
 }
-.portfolio-box .portfolio-modal-link {
+.portfolio-box .portfolio-modal-link, .portfolio-box .portfolio-text .gallery-link {
+    position: absolute;
+    top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #004a77;
+    color: #c2e7ff;
+    border-radius: 50%;
+}
+
+.portfolio-box .portfolio-img .px_modal.portfolio-modal-link {
     right: 20px;
     width: 40px;
     height: 40px;
     border: 2px solid  #004a77;
+    border-radius: 50%;
 }
 .portfolio-box .portfolio-text h6 {
     font-size: 17px;
@@ -902,6 +934,18 @@ div .row .align-items-start {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+/*a .fa.fa-plus{
+    background-color: #004a77;
+    width: 100px;
+    height: 100px;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    margin: 0px;
+
+
+}*/
+
 /*section contact as*/
 #contactus {
     padding: 30px 0;
@@ -1146,7 +1190,10 @@ label {
         
     }
     .m-text{
-        visibility: hidden;
+       opacity: 0;
+    }
+    .m-text:hover{
+        opacity: 1;
     }
     .menu_element .m-icon {
         width: 45px;
