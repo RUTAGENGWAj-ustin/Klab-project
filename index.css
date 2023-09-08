@@ -4,6 +4,7 @@ body{
 }
 
 :root{
+    --skill-color:rgba(255, 255, 255, 1);
     --skill-width:100%;
     --p-menu-color:rgba(37, 40, 37, 1);
    
@@ -27,6 +28,7 @@ body{
 }
 
 .white-mode{
+    --skill-color:rgb(0, 119, 255);
     --skill-width:100%;
       --p-menu-color:rgb(202, 212, 202);
       --primary-color:rgb(240, 245, 240);
@@ -592,7 +594,7 @@ div .row .align-items-start {
           position: relative;
           width: 0;
           min-width: calc(var( --skill-width)*0.92);
-          background-color:var(--secondary-color);
+          background-color:var(--skill-color);
       }
       .skill-lt .skill-bar-in-92 span {
           position: absolute;
@@ -606,7 +608,7 @@ div .row .align-items-start {
         position: relative;
         width: 0;
         min-width: calc(var( --skill-width)*0.75);
-        background-color:var(--secondary-color);
+        background-color:var(--skill-color);
     }
     .skill-lt .skill-bar-in-75 span {
         position: absolute;
@@ -620,7 +622,7 @@ div .row .align-items-start {
         position: relative;
         width: 0;
         min-width: calc(var( --skill-width)*0.86);
-        background-color:var(--secondary-color);
+        background-color:var(--skill-color);
     }
     .skill-lt .skill-bar-in-86 span {
         position: absolute;
@@ -634,7 +636,7 @@ div .row .align-items-start {
         position: relative;
         width: 0;
         min-width: calc(var( --skill-width)*0.88);
-        background-color:var(--secondary-color);
+        background-color:var(--skill-color);
     }
     .skill-lt .skill-bar-in-88 span {
         position: absolute;
